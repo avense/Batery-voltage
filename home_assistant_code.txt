@@ -1,0 +1,7 @@
+- platform: mqtt
+   unique_id: car-elantra-battery
+   state_topic: "tele/carbattery/SENSOR"
+   name: car_elantra_battery
+   unit_of_measurement: "v"
+   value_template: "{{ (value_json.ANALOG.Range | float / 100 | round(2) )}}"
+   qos: 2
